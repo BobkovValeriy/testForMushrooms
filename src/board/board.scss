@@ -1,0 +1,9 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px; 
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background-color: rgb(138, 132, 132);
+}

@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useEffect, useState } from "react";
+import Board from "./board/board";
+import './style/index.scss';
 function App() {
+  const [score, setScore] = useState(0)
+  const [time, setTime] = useState(1);
+  const [win, setWin] = useState(false);
+  const [defeat, setDefeat] = useState(false);
+  const difficult = {
+    quantity: 8, timerValue: 3000
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {win ? <div> Congratulations your score is {score}</div> : null}
+      {defeat ? <div> You lose ! Your score is {score}</div> : null}
+      {!win && !defeat ? <div>
+        <div>Score: {score} Time: {time}</div>
+        <Board difficult={difficult} setScore={setScore} setTime={setTime} time={time} setWin={setWin} setDefeat={setDefeat} /></div>
+        : null}
     </div>
   );
 }

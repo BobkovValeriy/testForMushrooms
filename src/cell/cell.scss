@@ -1,0 +1,22 @@
+.cell, .cell-close, .cell-done {
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border-radius: 6px;
+    user-select: none;
+}
+.cell-done{
+    background-color: greenyellow;
+}
+.cell{
+    background-color: aquamarine;
+}
+
+.cell-close{
+    background-color: rgba(23, 208, 125, 0.763);
+        &:hover{
+        background-color: rgba(82, 168, 139, 0.618);
+    }
+}
