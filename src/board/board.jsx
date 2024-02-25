@@ -70,9 +70,7 @@ function Board({ difficult, setScore, setWin, setDefeat, setTime, time }) {
     setDefeat(true);
   }
   if (boardArray.length === 0) {
-    setScore((score) => {
-      score += time;
-    });
+    setScore((score) => (score += time));
     setWin(true);
   }
   return (
