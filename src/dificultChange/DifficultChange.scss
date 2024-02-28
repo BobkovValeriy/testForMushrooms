@@ -1,0 +1,30 @@
+.difficult-change {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #173451;
+  color: #ffffff;
+}
+
+.difficult-display {
+  margin-bottom: 20px;
+}
+
+.difficulty-controls {
+  display: flex;
+}
+
+.difficulty-controls button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.difficulty-controls button:hover {
+  background-color: #0056b3;
+}

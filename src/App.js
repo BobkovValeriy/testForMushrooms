@@ -1,22 +1,38 @@
-import { useEffect, useState } from "react";
-import Board from "./board/board";
+import { useState } from "react";
 import './style/index.scss';
+import LoginedApp from "./loginedapp/LoginedApp";
+import Login from "./login/Login.jsx"
+import Registration from "./registration/Registration.jsx"
+import DifficultChange from "./dificultChange/DifficultChange.jsx";
 function App() {
-  const [score, setScore] = useState(0)
-  const [time, setTime] = useState(1);
-  const [win, setWin] = useState(false);
-  const [defeat, setDefeat] = useState(false);
-  const difficult = {
-    quantity: 8, timerValue: 3000
-  }
+  const [showLoginMenu, setShowLoginMenu] = useState(true);
+  const [showRegisterMenu, setShowRegisterMenu] = useState(false);
+  const [logined, setLogined] = useState(false);
+  const [player, setPlayer] = useState('');
+  const [pass, setPlayerPass] = useState('');
+  const [difficulty, setDifficulty] = useState(10);
+  const [changedDifficult, setChangedDifficult] = useState(false);
+  const [notChangedDifficult, setNotChangedDifficult] = useState(true);
+  const [difficult, setDifficult] = useState({});
+
   return (
-    <div className="App">
-      {win ? <div> Congratulations your score is {score}</div> : null}
-      {defeat ? <div> You lose ! Your score is {score}</div> : null}
-      {!win && !defeat ? <div>
-        <div>Score: {score} Time: {time}</div>
-        <Board difficult={difficult} setScore={setScore} setTime={setTime} time={time} setWin={setWin} setDefeat={setDefeat} /></div>
-        : null}
+    <div className="main">
+      {showLoginMenu ? <Login
+        setLogined={setLogined}
+        setPlayer={setPlayer}
+        setPlayerPass={setPlayerPass}
+        player={player} pass={pass}
+        setShowLoginMenu={setShowLoginMenu}
+        setShowRegisterMenu={setShowRegisterMenu} /> : null}
+      {showRegisterMenu ? <Registration
+        setLogined={setLogined}
+        setPlayer={setPlayer}
+        setPlayerPass={setPlayerPass}
+        player={player} pass={pass}
+        setShowLoginMenu={setShowLoginMenu}
+        setShowRegisterMenu={setShowRegisterMenu} /> : null}
+      {logined && notChangedDifficult ? <DifficultChange difficulty={difficulty} setDifficulty={setDifficulty} setDifficult={setDifficult} setNotChangedDifficult={setNotChangedDifficult} setChangedDifficult={setChangedDifficult} /> : null}
+      {logined && changedDifficult ? <LoginedApp player={player} difficult={difficult} setNotChangedDifficult={setNotChangedDifficult} setChangedDifficult={setChangedDifficult} /> : null}
     </div>
   );
 }

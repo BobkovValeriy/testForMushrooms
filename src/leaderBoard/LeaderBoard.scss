@@ -1,0 +1,33 @@
+
+.leaderboard {
+  h2 {
+    color: #fff; 
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007BFF; 
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: ivory; 
+    }
+
+    tr:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+  }
+}

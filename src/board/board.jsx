@@ -37,7 +37,7 @@ function Board({ difficult, setScore, setWin, setDefeat, setTime, time }) {
   const [block, setBlock] = useState(false);
   const baseScore = 1;
   useEffect(() => {
-    setTime((timerValue / 1000) * 60);
+    setTime((timerValue / 1000) * 60 + 30);
 
     setInterval(() => {
       setTime((time) => (time -= 1));
