@@ -10,7 +10,7 @@ function App() {
   const [logined, setLogined] = useState(false);
   const [player, setPlayer] = useState('');
   const [pass, setPlayerPass] = useState('');
-  const [difficulty, setDifficulty] = useState(10);
+  const [difficulty, setDifficulty] = useState(0);
   const [changedDifficult, setChangedDifficult] = useState(false);
   const [notChangedDifficult, setNotChangedDifficult] = useState(true);
   const [difficult, setDifficult] = useState({});
