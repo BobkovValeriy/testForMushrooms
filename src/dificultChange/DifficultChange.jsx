@@ -35,8 +35,10 @@ function DifficultChange({
     };
   };
   const play = () => {
-    setNotChangedDifficult(false);
-    setChangedDifficult(true);
+    if (difficulty > 1) {
+      setNotChangedDifficult(false);
+      setChangedDifficult(true);
+    }
   };
   return (
     <div className="difficult-change">
